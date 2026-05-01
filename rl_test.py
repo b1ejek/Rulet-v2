@@ -14,8 +14,11 @@ GREEN = '\033[32m'
 BLACK = '\033[30m'
 RESET = '\033[0m'
 
+f_skryptu = os.path.dirname(os.path.abspath(__file__))
+s_pliku = os.path.join(f_skryptu, "dane.txt")
+
 def zapisz_wynik(tresc):
-    with open("dane.txt", "a", encoding="utf-8") as plik:
+    with open(s_pliku, "a", encoding="utf-8") as plik:
         plik.write(tresc + "\n")
 
 def clear():
