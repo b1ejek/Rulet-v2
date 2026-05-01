@@ -44,21 +44,21 @@ def sprawdzanie_np_l(r, p_l):
 
 def kolor_green(r,k_l,kolor):
     clear()
-    print("Wygrana🎉!" if kolor == 'green' else "Przegrana")
+    print("Wygrałeś🎉!" if kolor == 'green' else "Przegrana")
     print(f"Wylosowany kolor i liczba to = {r} = {GREEN}green{RESET} =\nWybrany kolor to = {kolor} =")
     input("Naciśnij Enter, aby kontynuować...")
     main()
 
 def kolor_red(r,k_l,kolor):
     clear()
-    print("Wygrana🎉!" if kolor == 'black' else "Przegrana")
+    print("Wygrałeś🎉!" if kolor == 'black' else "Przegrana")
     print(f"Wylosowany kolor i liczba to = {r} = {RED}red{RESET} =\nWybrany kolor to = {kolor} =")
     input("Naciśnij Enter, aby kontynuować...")
     main()
 
 def kolor_black(r,k_l,kolor):
     clear()
-    print("Wygrana🎉!" if kolor == 'red' else "Przegrana")
+    print("Wygrałeś🎉!" if kolor == 'red' else "Przegrana")
     print(f"Wylosowany kolor i liczba to = {r} = {BLACK}black{RESET} =\nWybrany kolor to = {kolor} =")
     input("Naciśnij Enter, aby kontynuować...")
     main()
@@ -73,7 +73,7 @@ def main():
         if wybor_n in w_liczby:
             r = rulet()
             print(f"Twoja liczba: {wybor_n}, Wylosowana: {r}")
-            print("Wygrana🎉!" if wybor_n == r else "Przegrana")
+            print("Wygrałeś🎉!" if wybor_n == r else "Przegrana")
             input("Naciśnij Enter, aby kontynuować...")
             main()
 
