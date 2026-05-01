@@ -1,6 +1,7 @@
 import random
 import math
 import os
+from datetime import datetime
 
 wybory = ['1', '2', '3', '4', '0']
 green = [0]
@@ -14,12 +15,25 @@ GREEN = '\033[32m'
 BLACK = '\033[30m'
 RESET = '\033[0m'
 
-f_skryptu = os.path.dirname(os.path.abspath(__file__))
-s_pliku = os.path.join(f_skryptu, "dane.txt")
+sciezka_rl = os.path.dirname(os.path.abspath(__file__))
+
+folder_dane = os.path.join(sciezka_rl, "dane")
+
+if not os.path.exists(folder_dane):
+    os.makedirs(folder_dane)
+
+
+pelna_sciezka_pliku = os.path.join(folder_dane, "dane.txt")
 
 def zapisz_wynik(tresc):
-    with open(s_pliku, "a", encoding="utf-8") as plik:
-        plik.write(tresc + "\n")
+    teraz = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+    
+    linia = f"[{teraz}] {tresc}\n"
+    
+    with open(pelna_sciezka_pliku, "a", encoding="utf-8") as plik:
+        plik.write(linia)
+        plik.flush()
+        os.fsync(plik.fileno())
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
